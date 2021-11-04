@@ -1,27 +1,17 @@
-# Lesson
+# В чем разница между структурными и атрибутивными директивами?
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
+Структурные директивы нужны для изминения структцры DOM за счет удаления или добавления элементов.
+Атрибутивные директивы используются для изменения внешнего вида или поведения элемента DOM.
+Атрибутивные директивы меняют поведение элемента, к которому они применяются. Например, директива ngClass позволяет установить для элемента класс CSS. При этом сама директива применяется к элементу в виде атрибута.
 
-## Development server
+# Что такое trackByFn?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+trackByFn используется при перебора массива директивой *ngFor. trackByFn используется для оптимизации производительности. А если использовать trackBy Angular будет изменять DOM только для этого конкретного элемента. Если использовать trackBy angulat будет изменять dom дерево для конкретного отличного элемента не обновляя все DOM-дерево.
 
-## Code scaffolding
+# В чем разница между ngIf и display: none?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Директива ngIf полностью удаляет элеиент со страницы и DOM-дерева(если условие его отображения не потвердилось). При использовании display: none элемент скрывается со страницы но не удаляется из DOM. При использовании display: none елемент просто скрывается, не исчезая из DOM-дерева. ngIf лучше для оптимизации и производительности.
 
-## Build
+# ПОбъясните десятичную трубу
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Decimal pipe позволяют форматировать отображаемые значения, именно числа,number. В качестве параметра принимает формат числа в виде шаблона: {{ value | number [ : digitsInfo [ : locale ] ] }} value: само выводимое значение digitsInfo: строка в формате "minIntegerDigits.minFractionDigits-maxFractionDigits", где minIntegerDigits — минимальное количество цифр в целой части minFractionDigits — минимальное количество цифр в дробной части maxFractionDigits — максимальное количество цифр в дробной части locale: код применяемой культуры
